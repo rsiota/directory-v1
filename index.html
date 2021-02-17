@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Company Directory</title>
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <link href="./libs/css/normalize.css" rel="stylesheet" type="text/css">
+  <link href="./libs/css/style.css" rel="stylesheet" type="text/css">
+  <link rel="icon" href="./libs/images/favicon.svg">
+</head>
+
+<body class="body">
+  <!--   <div class="loader">
+    <div class="lds-ripple">
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+ -->
+  <div id="main" class="main hide">
+    <div class="login-container">
+      <div class="login-wrapper">
+        <div id="login-welcome" class="login-welcome">Welcome!</div>
+        <div class="form-wrapper w-form">
+          <form id="email-form" name="email-form" class="login-form">
+            <link href="https://unpkg.com/pattern.css" rel="stylesheet">
+            <div id="error-message" class="error-message hide"></div>
+            <div class="login-input-wrapper"><input type="email" class="login-input w-input" maxlength="256" name="Email" placeholder="Email" id="login-email" required="">
+              <div class="login-icon-wrapper">
+                <div id="login-icon-email" class="login-icon"></div>
+              </div>
+            </div>
+            <div class="login-input-wrapper"><input type="password" class="login-input w-input" maxlength="256" name="Password" placeholder="Password" id="login-password" required="">
+              <div class="login-icon-wrapper">
+                <div id="login-icon-password" class="login-icon"></div>
+              </div>
+            </div><input type="submit" value="LOGIN" id="login-submit" class="login-submit">
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="w-embed">
+    </style>
+  </div>
+  <div id="layout" class="w-layout-grid grid">
+    <div class="logo-bottom">
+      <img class="logo-img" src="./libs/images/logo-directory.svg">
+    </div>
+    <section id="left-section" class="left-section">
+      <div class="hero-wrapper">
+        <div class="search-wrapper">
+          <div class="button-wrapper button-wrapper--settings hide">
+            <div id="settings-button" class="settings-button">
+              <div class="dot"></div>
+              <div class="dot middle"></div>
+              <div class="dot"></div>
+            </div>
+          </div>
+          <form action="/search" class="search-box w-form">
+          <div id="search-icon" class="search-icon">&#xe90a;</div>
+            <div id="cancel-button-wrapper" class="cancel-button-wrapper">
+              <div class="cancel-icon">+</div>
+            </div>
+            <input type="search" class="search-input w-input" maxlength="256" name="query" placeholder="Search" id="search" required="">
+            <input type="submit" value="-" class="search-button w-button">
+          </form>
+          <div class="add-button-wrapper">
+            <div class="button-wrapper">
+              <div id="add-button" class="add-button">+</div>
+            </div>
+          </div>
+        </div>
+        <div class="user-wrapper">
+          <div class="user-picture">
+            <div class="green-highlight">
+              <div id="u-picture-wrapper" class="u-picture-wrapper">
+                <img src="" loading="lazy" height="" alt="" id="u-picture" class="u-picture">
+                <div id="u-initials" class="u-picture-text"></div>
+              </div>
+            </div>
+          </div>
+          <div class="user-filters">
+            <div class="user-text">
+              <h1 class="h1-grey">@ </h1>
+              <h1 id="u-name" class="h1-black"></h1>
+            </div>
+            <div class="filters-wrapper">
+              <h3 id="filter-name" class="h3-grey selected">name </h3>
+              <h3 id="filter-location" class="h3-grey">location</h3>
+              <h3 id="pipe-1" class="h3-pipe">|</h3>
+              <h3 id="filter-department" class="h3-grey">department</h3>
+              <h3 id="pipe-2" class="h3-pipe">|</h3>
+            </div>
+          </div>
+        </div>
+        <div id="recents-wrapper" class="recents-wrapper">
+        </div>
+      </div>
+      <div class="directory-wrapper">
+        <div id="results-wrapper" class="results-wrapper">
+        </div>
+        <div id="atoz-wrapper" class="atoz-wrapper">
+          <div id="atoz" class="atoz">
+          </div>
+        </div>
+      </div>
+    </section>
+    <div id="center-section" class="center-section">
+      <div class="settings-wrap">
+        <div class="button-wrapper">
+          <div id="settings-button" class="settings-button">
+            <div class="dot"></div>
+            <div class="dot middle"></div>
+            <div class="dot"></div>
+          </div>
+        </div>
+      </div>
+      <div class="settings-text">
+        <div class="user-filters">
+          <div class="settings-wrapper">
+            <h1 class="h1-black">Settings</h1>
+          </div>
+          <div class="buttons-wrapper">
+            <h3 id="departments-button" class="h3-grey disable-content">departments</h3>
+            <h3 class="h3-pipe">|</h3>
+            <h3 id="locations-button" class="h3-grey disable-content">locations</h3>
+          </div>
+        </div>
+      </div>
+      <div id="departments-label" class="result-label-wrapper">
+        <h2 class="result-label">Departments</h2>
+      </div>
+      <div id="departments-editor" class="result-items result-items--settings">
+        <div id="field-w-department-edit" class="field-wrapper">
+          <div class="field-icon-blue">&#xe903;</div>
+          <div class="field-text-wrapper">
+            <div id="select-department" class="select-wrapper">
+              <select id="department-edit" name="department" class="select-input-right w-select">
+                <option value="" disabled selected></option>
+              </select>
+            </div>
+            <input type="text" class="field-input field-input--settings w-input hide" name="new-department" data-name="new-department" id="new-department">
+            <input type="text" class="field-input field-input--settings w-input hide" name="update-department" data-name="update-department" id="update-department">
+            <h5 id="delete-department-message" class="field-message hide"></h5>
+            <h5 id="delete-department-message" class="field-message hide"></h5>
+          </div>
+          <div id="add-delete-department" class="field-actions-wrapper">
+            <div id="add-department" class="field-action-button green-small">+</div>
+            <div id="delete-department" class="field-action-button red-small">-</div>
+            <div id="edit-department" class="field-action-icon">&#xe907;</div>
+          </div>
+          <div id="save-cancel-department" class="field-actions-wrapper hide">
+            <div class="field-action-wrapper">
+              <div id="cancel-department" class="field-action-cancel">+</div>
+            </div>
+            <div id="save-department" class="field-action-save">&#xe908;</div>
+          </div>
+          <div id="update-department-yes-no" class="field-actions-wrapper hide">
+            <div class="field-action-wrapper">
+              <div id="update-department-no" class="field-action-cancel">+</div>
+            </div>
+            <div id="update-department-yes" class="field-action-save">&#xe908;</div>
+          </div>
+          <div id="delete-department-yes-no" class="field-actions-wrapper hide">
+            <div class="field-action-wrapper">
+              <div id="delete-department-no" class="field-action-cancel">+</div>
+            </div>
+            <div id="delete-department-yes" class="field-action-yes">&#xe90b;</div>
+          </div>
+          <label id="field-label-department" for="department-edit" class="field-label field-label--settings">Department</label>
+        </div>
+        <div class="field-wrapper">
+          <div class="field-icon-blue">&#xe900;</div>
+          <div class="field-text-wrapper">
+            <div id="select-locdept" class="select-wrapper">
+              <select id="location-department" name="location-department" class="select-input-right disable-content w-select" disabled="disabled">
+                <option value="" disabled selected></option>
+              </select>
+            </div>
+          </div>
+          <label for="location-department" class="field-label field-label--settings">Department Location</label>
+        </div>
+      </div>
+      <div id="locations-label" class="result-label-wrapper">
+        <h2 class="result-label">Locations</h2>
+      </div>
+      <div id="result-items-locations" class="result-items result-items--settings">
+        <div id="field-w-location" class="field-wrapper">
+          <div class="field-icon-blue">&#xe900;</div>
+          <div class="field-text-wrapper">
+            <div id="select-location" class="select-wrapper">
+              <select id="office-location" name="office-location" class="select-input-right w-select">
+                <option value="" disabled selected></option>
+              </select>
+            </div>
+            <input type="text" class="field-input field-input--settings w-input hide" name="new-location" data-name="new-location" id="new-location">
+            <input type="text" class="field-input w-input field-input--settings hide" name="update-location" data-name="update-location" id="update-location">
+            <h5 id="delete-location-message" class="field-message hide"></h5>
+          </div>
+          <div id="add-delete-location" class="field-actions-wrapper">
+            <div id="add-location" class="field-action-button green-small">+</div>
+            <div id="delete-location" class="field-action-button red-small">-</div>
+            <div id="edit-location" class="field-action-icon">&#xe907;</div>
+          </div>
+          <div id="save-cancel-location" class="field-actions-wrapper hide">
+            <div class="field-action-wrapper">
+              <div id="cancel-location" class="field-action-cancel">+</div>
+            </div>
+            <div id="save-location" class="field-action-save">&#xe908;</div>
+          </div>
+          <div id="update-location-yes-no" class="field-actions-wrapper hide">
+            <div class="field-action-wrapper">
+              <div id="update-location-no" class="field-action-cancel">+</div>
+            </div>
+            <div id="update-location-yes" class="field-action-save">&#xe908;</div>
+          </div>
+          <div id="delete-location-yes-no" class="field-actions-wrapper hide">
+            <div class="field-action-wrapper">
+              <div id="delete-location-no" class="field-action-cancel">+</div>
+            </div>
+            <div id="delete-location-yes" class="field-action-yes">&#xe90b;</div>
+          </div>
+          <label id="field-label-location" for="office-location" class="field-label field-label--settings">Location</label>
+        </div>
+      </div>
+    </div>
+    <div id="right-section" class="right-section">
+      <div class="right-hero-wrapper">
+        <div id="switch-view" class="switch-view hide">&#xe90e;</div>
+        <div id="del-user-wrapper" class="del-user-wrapper hide">
+          <div id="delete-user-button" class="delete-user-button">&#xe90c;</div>
+          <div id="delete-user-text" class="delete-user-text"></div>
+          <div id="cancel-delete-user" class="cancel-delete-user">
+            <div class="cancel-icon">+</div>
+          </div>
+        </div>
+        <div id="save-delete-wrapper" class="save-delete-wrapper">
+          <div class="button-wrapper">
+            <div id="cancel-button" class="red-button hide">
+              <div class="cancel-button">+</div>
+            </div>
+            <div id="remove-button" class="red-button">_</div>
+          </div>
+          <div class="user-edit">
+            <div class="button-wrapper">
+              <div id="edit-button" class="blue-button">&#xe907;</div>
+            </div>
+            <div id="save-button" class="blue-button save-buttn hide">&#xe908;</div>
+          </div>
+        </div>
+      </div>
+      <div id="right-field-wrapper" class="right-field-wrapper w-form disable-content">
+        <div id="ed-user-wrapper" class="ed-user-wrapper disable-content">
+          <form method="post" action="" enctype="multipart/form-data" id="picture-form">
+            <div class="ed-picture-wrapper">
+              <div class="img-inner"></div>
+              <div class="img-outer"></div>
+              <div class="img-color"></div>
+              <img id="picture" src="./libs/images/faces/00.png" loading="lazy" alt="" class="ed-picture">
+              <div class="ed-initials">
+                <div id="initial-first" class="ed-picture-text"></div>
+                <div id="initial-last" class="ed-picture-text"></div>
+              </div>
+              <label for="picture-file" class="file-upload">
+              </label>
+              <input type="file" id="picture-file" class="ed-input-file" name="file" />
+            </div>
+          </form>
+        </div>
+        </form>
+        <div class="e-name-wrapper">
+          <div class="hor-line"></div>
+          <h1 id="e-first-name" class="e-name">Andrew</h1>
+          <h1 id="e-last-name" class="e-name">Black</h1>
+          <div class="hor-line"></div>
+        </div>
+        <div class="e-name-wrapper">
+          <h3 id="e-location" class="h3-sel-user">San Francisco | </h3>
+          <h3 id="e-department" class="h3-sel-user">Research & Development</h3>
+        </div>
+      </div>
+      <form id="editor-form" name="editor-form" data-name="Editor Form" class="form">
+        <div id="field-w-first-name" class="field-wrapper-user">
+          <div class="field-text-wrapper">
+            <input type="text" class="w-input field-input disable-content" maxlength="256" name="first-name" data-name="first-name" disabled="disabled" id="first-name">
+            <label for="first-name" class="field-label disable-content">First Name</label>
+            <div class="field-icon-blue">&#xe904;</div>
+          </div>
+        </div>
+        <div id="field-w-last-name" class="field-wrapper-user">
+          <div class="field-text-wrapper">
+            <input type="text" class="w-input field-input disable-content" maxlength="256" name="last-name" data-name="last-name" disabled="disabled" id="last-name">
+            <label for="last-name" class="field-label disable-content">Last Name</label>
+            <div class="field-icon-blue">&#xe904;</div>
+          </div>
+        </div>
+        <div id="field-w-phone" class="field-wrapper-user">
+          <div class="field-text-wrapper">
+            <input type="tel" class="w-input field-input disable-content" maxlength="256" name="phone" data-name="phone" disabled="disabled" id="phone">
+            <label for="phone" class="field-label disable-content">Telephone</label>
+            <div class="field-icon-blue">&#xe906;</div>
+          </div>
+        </div>
+        <div id="field-w-email" class="field-wrapper-user">
+          <div class="field-text-wrapper">
+            <input type="email" class="w-input field-input disable-content" maxlength="256" name="email" data-name="email" disabled="disabled" id="email">
+            <label for="email" class="field-label disable-content">Email</label>
+            <div class="field-icon-blue">&#xe905;</div>
+          </div>
+        </div>
+        <div id="field-w-job-title" class="field-wrapper-user">
+          <div class="field-text-wrapper">
+            <input type="text" class="w-input field-input disable-content" maxlength="256" name="job-title" data-name="job-title" disabled="disabled" id="job-title">
+            <label for="job-title" class="field-label disable-content">Job Title</label>
+            <div class="field-icon-blue">&#xe902;</div>
+          </div>
+        </div>
+        <div id="field-w-date-join" class="field-wrapper-user">
+          <div class="field-text-wrapper">
+            <input type="date" class="w-input field-date disable-content" name="date-join" data-name="date-join" id="date-join" value="" min="1970-01-01">
+            <label for="date-join" class="field-label disable-content">Date of Joining</label>
+            <div class="field-icon-blue">&#xe901;</div>
+          </div>
+        </div>
+        <div id="field-w-department" class="field-wrapper-user">
+          <div class="field-text-wrapper">
+            <select id="department" name="department" class="right-w-select select-input disable-content
+            " disabled="disabled">
+              <option value="" disabled selected></option>
+            </select>
+            <label for="department" class="field-label disable-content">Department</label>
+            <div class="field-icon-blue">&#xe903;</div>
+            <input type="submit" value="Submit" data-wait="Please wait..." class="submit-button w-button">
+      </form>
+    </div>
+  </div>
+  </div>
+  <script type="text/javascript" src="./libs/js/libs/jquery-2.2.3.min.js"></script>
+  <script type="text/javascript" src="./libs/js/libs/jquery.mousewheel.min.js"></script>
+  <script type="text/javascript" src="./libs/js/libs/fuzzysort.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.15/lodash.min.js"></script>
+  <script type="text/javascript" src="./libs/js/libs/anime.min.js"></script>
+  <script type="module" src="./libs/js/script.js"></script>
+</body>
+
+</html>
