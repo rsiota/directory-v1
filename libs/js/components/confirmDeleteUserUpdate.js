@@ -21,7 +21,6 @@ function confirmDeleteUserUpdate() {
 	recentItemsUpdate(state.recents);
 	clearSearch();
 	updateView();
-	console.log(state);
 }
 
 function updateView() {

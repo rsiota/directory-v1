@@ -25,7 +25,8 @@ var view = {
 	],
 	elemHide: [
 		'#edit-button',
-		'#remove-button'
+		'#remove-button',
+		'#picture'
 	],
 }
 

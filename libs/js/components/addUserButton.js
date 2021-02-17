@@ -18,7 +18,6 @@ function addUserButton() {
 		updateView();
 		state.record = "new";
 		state.lastId = Math.max(...state.db.data.map(user => parseInt(user.id)));
-		console.log(state.lastId);
 	})
 
 }

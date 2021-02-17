@@ -1,7 +1,5 @@
 function formEditorClear() {
 
-	var urlNoCountry = './libs/images/blank-country.png';
-
 	$('#initial-first').html('');
 	$('#picture').attr('src', '');
 	$('#initial-last').html('');
@@ -17,8 +15,6 @@ function formEditorClear() {
 	$('#job-title').val('');
 	$('#date-join').val('');
 	$('#office-location').val('');
-	$('#flag').attr('src', urlNoCountry);
-	$('#country option[value=""').prop('selected', true);
 
 }
 

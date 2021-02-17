@@ -8,49 +8,27 @@ function updateMobileView() {
 	let animation = anime.timeline({});
 
 	animation
-
-		.add({
-			targets: '#right-section',
-			translateX: '100%',
-			translateY: 'calc(-100vh - 15px)',
-			duration: 0
-		})
-		.add({
-			targets: '#center-section',
-			translateY: 'calc(-100vh - 15px)',
-			easing: 'easeInOutQuad',
-			duration: 0
-		})
 		.add({
 			begin: function() {
-				elemShow(view.elemShow);
+				$('#left-section').css('width', '100vw');
+				$('#right-section').css('width', '100vw');
 			},
-			targets: '#left-section',
+			targets: '#left-section, #right-section',
 			translateX: '-100%',
-			opacity: 1,
-			easing: 'easeInOutQuad',
-			duration: 400
-		})
-		.add({
-			targets: '#right-section',
-			translateX: '0%',
 			easing: 'easeInOutQuad',
 			duration: 400,
 			complete: function() {
 				$('#right-section').css('width', '100vw');
+				elemShow(view.elemShow);
 			}
-		}, 0)
-}
+		})
 
-var view = {
+	var view = {
 
-	elemHide: [
-		'#left-section'
-	],
-	elemShow: [
-		'#center-section',
-		'#right-section',
-		'#switch-view'
-	]
+		elemShow: [
+			'#switch-view',
+			'right-section'
+		],
+	}
 }
 export { updateMobileView };

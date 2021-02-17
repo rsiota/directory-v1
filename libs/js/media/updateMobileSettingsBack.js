@@ -3,7 +3,7 @@ import {
 	elemHide
 } from '../helper.js';
 
-function updateMobileSearch() {
+function updateMobileSettingsBack() {
 
 	let animation = anime.timeline({});
 
@@ -11,23 +11,23 @@ function updateMobileSearch() {
 		.add({
 			begin: function() {
 				$('#left-section').css('width', '100vw');
-				$('#right-section').css('width', '100vw');
+				$('#center-section').css('width', '100vw');
 			},
-			targets: '#left-section, #right-section',
+			targets: '#left-section, #center-section',
 			translateX: '0%',
 			easing: 'easeInOutQuad',
 			duration: 400,
 			complete: function() {
 				$('#left-section').css('width', '100vw');
-				elemShow(search.elemShow);
+				elemShow(settingsBack.elemShow);
 			}
 		})
 
-	var search = {
-		elemShow: [
-			'#center-section'
-		]
-	}
+		var settingsBack = {
+			elemShow: [
+				'#right-section'
+			]
+		}
 }
 
-export { updateMobileSearch };
+export { updateMobileSettingsBack };

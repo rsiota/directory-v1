@@ -1,7 +1,7 @@
 import { handleMediaChange, mediaQuery } from '../media/media.js';
 import { state } from '../state.js';
 
-function backToSearchButton() {
+function backFromEditorButton() {
 
 	$('#switch-view').click(function() {
 		state.currentAction = "slide-search";
@@ -10,4 +10,4 @@ function backToSearchButton() {
 
 }
 
-export { backToSearchButton };
+export { backFromEditorButton };
