@@ -26,7 +26,8 @@ var view = {
 	],
 	elemShow: [
 		'#edit-button',
-		'#remove-button'
+		'#remove-button',
+		'#picture'
 	],
 }
 

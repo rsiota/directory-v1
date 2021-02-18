@@ -4,10 +4,10 @@ function avatarUpdate(user, divId) {
 	var isPhoto = user['photo'];
 	var urlPhoto = './libs/images/faces/' + user['photoFile'];
 	if (isPhoto === '1') {
-		$(divId).show();
+		$(divId).removeClass('hide');
 		$(divId).attr('src', urlPhoto);
 	} else {
-		$(divId).hide();
+		$(divId).addClass('hide');
 	}
 }
 

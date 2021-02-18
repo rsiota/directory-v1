@@ -14,12 +14,7 @@ function getUserByEmail(email, password) {
 		async: false,
 		success: function(result) {
 			if (result.status.name == 'ok' && result.status.description == 'success') {
-				if (state.remote == "yes") {
 					loginRemoteAnimation();
-					state.remote = "no";
-				} else {
-					loginSubmitAnimation();
-				}
 				state.loggedUser = result.data[0];
 				activeUserUpdate(state.loggedUser);
 				editorUpdate(state.loggedUser);

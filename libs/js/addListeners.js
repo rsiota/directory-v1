@@ -17,6 +17,8 @@ import { cancelEditorButton } from './components/cancelEditorButton.js';
 import { saveButton } from './components/saveButton.js';
 import { avatar } from './components/avatar.js';
 import { editSettingsButton } from './components/editSettingsButton.js';
+import { departmentSettingsButton } from './components/departmentSettingsButton.js';
+import { locationSettingsButton } from './components/locationSettingsButton.js';
 import { addDepartmentButton } from './components/addDepartmentButton.js';
 import { addLocationButton } from './components/addLocationButton.js';
 import { saveNewDepartmentButton } from './components/saveNewDepartmentButton.js';
@@ -56,6 +58,8 @@ function addListeners() {
 	saveButton();
 	avatar();
 	editSettingsButton();
+	departmentSettingsButton();
+	locationSettingsButton();
 	addDepartmentButton();
 	addLocationButton();
 	saveNewDepartmentButton();

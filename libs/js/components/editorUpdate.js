@@ -8,7 +8,6 @@ function editorUpdate(user) {
 	state.user = user;
 	formEditorUpdate(user);
 	formDepartmentsUpdate();
-	// formLocationUpdate();
 	addToRecents(user);
 
 }

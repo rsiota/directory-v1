@@ -31,7 +31,6 @@ function updateNewLocation(result) {
 	formLocationHtml('office-location');
 	formLocationHtml('location-department');
 	$('#office-location option[value="' + state.newLocation + '"]').prop('selected', true);
-	// $('#e-location').html($('#office-location').val() + ' |');
 }
 
 function updateCurrentLocation(result) {
@@ -39,7 +38,6 @@ function updateCurrentLocation(result) {
 	formLocationHtml('office-location');
 	formLocationHtml('location-department');
 	$('#office-location option[value="' + state.updateLocation + '"]').prop('selected', true);
-	// $('#e-location').html($('#office-location').val() + ' |');
 }
 
 export { getLocations, createLocations, updateNewLocation, updateCurrentLocation };

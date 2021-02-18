@@ -5,12 +5,6 @@ function formLocationHtml(id) {
 
 	$('#' + id).children().remove().end();
 
-	$('#' + id).append($('<option>', {
-		value: '',
-		text: '',
-		disabled: true,
-	}));
-
 	var select = document.getElementById(id);
 
 	for (var i = 0; i < state.locations.length; i++) {
