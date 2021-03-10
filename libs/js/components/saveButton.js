@@ -1,4 +1,4 @@
-import { handleMediaChange, mediaQuery } from '../media/media.js';
+import { handleMediaChange } from '../media/media.js';
 import { editorSave } from './editorSave.js';
 import { updateRecents } from '../helper.js';
 import { insertUser } from '../ajax/insertUser.js';
@@ -34,7 +34,7 @@ function checkUser(user) {
 function updateView() {
 
 	state.currentAction = "view";
-	handleMediaChange(mediaQuery);
+	handleMediaChange();
 
 	elemEnable(view.elemEnable);
 	elemDisable(view.elemDisable);

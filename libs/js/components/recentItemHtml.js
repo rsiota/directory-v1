@@ -1,4 +1,4 @@
-import { handleMediaChange, mediaQuery } from '../media/media.js';
+import { handleMediaChange } from '../media/media.js';
 import { state } from '../state.js';
 import { editorUpdate } from './editorUpdate.js';
 
@@ -32,7 +32,7 @@ function recentItemHtml(user) {
 		"class": 'recent-item',
 		click: function() {
 			state.currentAction = "slide-view";
-			handleMediaChange(mediaQuery);
+			handleMediaChange();
 			editorUpdate(user);
 		}
 	}).appendTo('#recents-wrapper');

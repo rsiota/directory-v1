@@ -1,4 +1,4 @@
-import { handleMediaChange, mediaQuery } from '../media/media.js';
+import { handleMediaChange } from '../media/media.js';
 import { editorUpdate } from './editorUpdate.js';
 import { recentItemsUpdate } from './recentItemsUpdate.js';
 import { state } from '../state.js';
@@ -31,7 +31,7 @@ function fuzzyResultHtml(user) {
 		"class": 'item-center',
 		click: function() {
 			state.currentAction = "slide-view";
-			handleMediaChange(mediaQuery);
+			handleMediaChange();
 			editorUpdate(user);
 			recentItemsUpdate(state.recents);
 		}

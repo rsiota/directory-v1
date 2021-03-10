@@ -1,4 +1,4 @@
-import { handleMediaChange, mediaQuery } from '../media/media.js';
+import { handleMediaChange } from '../media/media.js';
 import { editorUpdate } from './editorUpdate.js';
 import { recentItemsUpdate } from './recentItemsUpdate.js';
 import { state } from '../state.js';
@@ -6,7 +6,7 @@ import { state } from '../state.js';
 function sortResultHtml(filter, user) {
 
 	// <div id='item-center' class="item-center">
-	//   <div class="item-picture-wrapper">
+	//   <div classnd="item-picture-wrapper">
 	//     <div class="item-picture-highlight"></div>
 	//     <div id="s-initials" class="item-picture-text"></div>
 	//     <img src="" loading="lazy" alt="" id="s-picture" class="item-picture">
@@ -31,7 +31,7 @@ function sortResultHtml(filter, user) {
 		"class": 'item-center',
 		click: function() {
 			state.currentAction = "slide-view";
-			handleMediaChange(mediaQuery);
+			handleMediaChange();
 			state.user = user;
 			editorUpdate(user);
 			recentItemsUpdate(state.recents);

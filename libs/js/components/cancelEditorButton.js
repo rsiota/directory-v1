@@ -1,4 +1,4 @@
-import { handleMediaChange, mediaQuery } from '../media/media.js';
+import { handleMediaChange } from '../media/media.js';
 import { state } from '../state.js';
 import { editorUpdate } from './editorUpdate.js';
 import { view } from './cancelEditorButtonView.js';
@@ -23,7 +23,7 @@ function cancelEditorButton() {
 function updateView() {
 
 	state.currentAction = "slide-search";
-	handleMediaChange(mediaQuery);
+	handleMediaChange();
 
 	elemEnable(view.elemEnable);
 	elemDisable(view.elemDisable);

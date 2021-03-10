@@ -1,4 +1,4 @@
-import { handleMediaChange, mediaQuery } from '../media/media.js';
+import { handleMediaChange } from '../media/media.js';
 import { state } from '../state.js';
 
 function editSettingsButton() {
@@ -10,7 +10,7 @@ function editSettingsButton() {
 function updateView() {
 
 	state.currentAction = "slide-settings";
-	handleMediaChange(mediaQuery);
+	handleMediaChange();
 
 }
 

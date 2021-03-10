@@ -1,4 +1,4 @@
-import { handleMediaChange, mediaQuery } from '../media/media.js';
+import { handleMediaChange } from '../media/media.js';
 import { deleteUser } from '../ajax/deleteUser.js';
 import { state } from '../state.js';
 import { deletePhoto } from '../ajax/deletePhoto.js';
@@ -9,7 +9,7 @@ function confirmDeleteUserButton() {
 		deletePhoto(state.user['photoFile']);
 		state.currentAction = "slide-search";
 		state.record = "existing";
-		handleMediaChange(mediaQuery);
+		handleMediaChange();
 	})
 }
 

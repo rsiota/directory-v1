@@ -1,4 +1,4 @@
-import { handleMediaChange, mediaQuery } from '../media/media.js';
+import { handleMediaChange } from '../media/media.js';
 import { state } from '../state.js';
 import { view } from './cancelDeleteUserView.js';
 import {
@@ -17,7 +17,7 @@ function cancelDeleteUserButton() {
 function updateView() {
 
 	state.currentAction = "view";
-	handleMediaChange(mediaQuery);
+	handleMediaChange();
 
 	elemEnable(view.elemEnable);
 	elemFullOpacity(view.elemFullOpacity);

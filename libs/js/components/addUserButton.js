@@ -1,4 +1,4 @@
-import { handleMediaChange, mediaQuery } from '../media/media.js';
+import { handleMediaChange } from '../media/media.js';
 import { editorClear } from './editorClear.js';
 import { state } from '../state.js';
 import { view } from './addUserButtonView.js';
@@ -25,7 +25,7 @@ function addUserButton() {
 function updateView() {
 
 	state.currentAction = "slide-editor";
-	handleMediaChange(mediaQuery);
+	handleMediaChange();
 
 	elemEnable(view.elemEnable);
 	elemDisable(view.elemDisable);

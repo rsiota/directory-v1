@@ -1,4 +1,4 @@
-import { handleMediaChange, mediaQuery } from '../media/media.js';
+import { handleMediaChange } from '../media/media.js';
 import { state } from '../state.js';
 import { view } from './editUserButtonView.js';
 import {
@@ -20,7 +20,7 @@ function editUserButton() {
 function updateView() {
 
 	state.currentAction = "editor";
-	handleMediaChange(mediaQuery);
+	handleMediaChange();
 
 	elemEnable(view.elemEnable);
 	elemDisable(view.elemDisable);

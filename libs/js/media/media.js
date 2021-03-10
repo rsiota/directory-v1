@@ -1,29 +1,50 @@
 import { state } from '../state.js';
 import { updateMobile } from './updateMobile.js';
+import { updateTablet } from './updateTablet.js';
 import { updateDesktop } from './updateDesktop.js';
 
-const mediaQuery = window.matchMedia('(max-width: 479px)')
+var mqMobile = window.matchMedia('(max-width: 767px)');
+var mqTablet = window.matchMedia('(min-width: 767px) and (max-width: 1100px)');
+var mqDesktop = window.matchMedia('(min-width: 1100px)');
 
 function media() {
 
-  // Register event listener
-  mediaQuery.addListener(handleMediaChange);
+  mqMobile.addListener(handleMediaMobile);
+  mqTablet.addListener(handleMediaTablet);
+  mqDesktop.addListener(handleMediaDesktop);
 
-  // Initial check
-  handleMediaChange(mediaQuery);
+  handleMediaChange();
 
 }
 
-function handleMediaChange(e) {
-  // Check if the media query is true
+function handleMediaChange() {
+  handleMediaMobile(mqMobile);
+  handleMediaTablet(mqTablet);
+  handleMediaDesktop(mqDesktop);
+}
+
+function handleMediaMobile(e) {
+
   if (e.matches) {
-    // Then log the following message to the console
     state.viewport = "mobile";
     updateMobile();
-  } else {
+  }
+}
+
+function handleMediaTablet(e) {
+
+  if (e.matches) {
+    state.viewport = "tablet";
+    updateTablet();
+  }
+}
+
+function handleMediaDesktop(e) {
+
+  if (e.matches) {
     state.viewport = "desktop";
     updateDesktop();
   }
 }
 
-export { media, handleMediaChange, mediaQuery };
+export { media, handleMediaChange };

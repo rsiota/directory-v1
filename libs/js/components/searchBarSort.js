@@ -1,4 +1,4 @@
-import { handleMediaChange, mediaQuery } from '../media/media.js';
+import { handleMediaChange } from '../media/media.js';
 import { state } from '../state.js';
 import { fuzzyResultHtml } from './fuzzyResultHtml.js';
 import { fuzzyResultUpdate } from './fuzzyResultUpdate.js';
@@ -29,7 +29,7 @@ function searchBarSort(database) {
 			if ($input.is(":focus")) {
 				e.preventDefault();
 				state.currentAction = "slide-view";
-				handleMediaChange(mediaQuery);
+				handleMediaChange();
 				editorUpdate(state.firstResult);
 				recentItemsUpdate(state.recents);
 

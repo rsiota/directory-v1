@@ -5,6 +5,10 @@
   box-sizing: border-box;
 }
 
+::-webkit-scrollbar {
+  display: none;
+}
+
 html {
   height: 100%;
 }
@@ -346,8 +350,15 @@ p {
 #editor-form {
   margin-left: auto;
   margin-right: auto;
-  width: 400px;
-  margin-top: 35px;
+  min-width: 400px;
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+#editor-form .e-name-wrapper:nth-of-type(2) {
+  margin-bottom: 40px;
+  align-self: center;
 }
 
 .left-section {
@@ -1653,7 +1664,7 @@ p {
 }
 
 .hor-line {
-  width: 8vw;
+  width: 100%;
   height: 1.5px;
   margin-left: 13px;
   margin-right: 13px;
@@ -2634,6 +2645,8 @@ p {
   display: -ms-flexbox;
   display: flex;
   cursor: default;
+  justify-content: space-between;
+
 }
 
 .e-name {
@@ -2916,18 +2929,48 @@ p {
   display: none;
 }
 
-@media screen and (max-width: 767px) {
-  .item-text-wrapper {
-    margin-top: -3px;
+@media screen and (max-width: 1300px) {
+
+  .grid {
+    grid-template-columns: 1fr 1fr 1fr
   }
+
+  #editor-form {
+    width: 100%;
+    min-width: auto;
+    max-width: 400px;
+  }
+
 }
 
-@media screen and (max-width: 479px) {
+@media screen and (max-width: 1110px) {
+
+  .grid {
+    grid-template-areas: 'search editor';
+    grid-template-columns: none;
+
+  }
+
+  #left-section,
+  #right-section {
+    width: calc(50vw - 20px);
+  }
+
+/*  .button-wrapper--settings {
+    display: flex;
+  }
+*/
+
+}
+
+@media screen and (max-width: 767px) {
+
   .grid {
     margin: 0px;
     height: auto;
     border-radius: 0px;
     grid-template-columns: auto;
+    grid-template-areas: 'search editor settings';
   }
 
   #left-section {
@@ -2943,12 +2986,13 @@ p {
   }
 
   #editor-form {
-    width: auto;
-    margin-left: 0px;
-    margin-right: 0px;
-    overflow: scroll;
+    justify-content: flex-start;
+    overflow-y: scroll;
+    height: calc(100vh - 275px);
+  }
 
-    height: calc(100vh - 349px);
+  #editor-form .field-text-wrapper {
+    margin-bottom: 25px;
   }
 
   .field-wrapper-user:first-child {
@@ -2962,18 +3006,15 @@ p {
   }
 
   .item-text-wrapper {
+    margin-top: -3px;
     -webkit-box-pack: center;
     -webkit-justify-content: center;
     -ms-flex-pack: center;
     justify-content: center;
   }
 
-
-  .button-wrapper--settings {
-    display: flex;
-  }
-
 }
+
 
 #filter-name {
   -ms-grid-column-align: center;
